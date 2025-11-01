@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Notícias - Verdadeira ou Falsa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .news-item {
+            margin-bottom: 20px;
+        }
+        .news-item p {
+            font-size: 18px;
+        }
+        .buttons {
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .message {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Teste de Verdadeiro ou Falso</h1>
+
+        <div class="news-item" id="news1">
+            <p>1. O sol é a estrela mais próxima da Terra.</p>
+            <div class="buttons">
+                <button onclick="checkAnswer(true, 0)">Verdadeiro</button>
+                <button onclick="checkAnswer(false, 0)">Falso</button>
+            </div>
+        </div>
+
+        <div class="news-item" id="news2">
+            <p>2. O Brasil tem 27 estados.</p>
+            <div class="buttons">
+                <button onclick="checkAnswer(true, 1)">Verdadeiro</button>
+                <button onclick="checkAnswer(false, 1)">Falso</button>
+            </div>
+        </div>
+
+        <div class="news-item" id="news3">
+            <p>3. A água ferve a 100°C ao nível do mar.</p>
+            <div class="buttons">
+                <button onclick="checkAnswer(true, 2)">Verdadeiro</button>
+                <button onclick="checkAnswer(false, 2)">Falso</button>
+            </div>
+        </div>
+
+        <div class="news-item" id="news4">
+            <p>4. A capital da França é Roma.</p>
+            <div class="buttons">
+                <button onclick="checkAnswer(true, 3)">Verdadeiro</button>
+                <button onclick="checkAnswer(false, 3)">Falso</button>
+            </div>
+        </div>
+
+        <div class="news-item" id="news5">
+            <p>5. A montanha mais alta do mundo é o Everest.</p>
+            <div class="buttons">
+                <button onclick="checkAnswer(true, 4)">Verdadeiro</button>
+                <button onclick="checkAnswer(false, 4)">Falso</button>
+            </div>
+        </div>
+
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        // Respostas corretas para cada notícia (verdadeira ou falsa)
+        const correctAnswers = [true, true, true, false, true];
+
+        // Função para verificar a resposta do usuário
+        function checkAnswer(isTrue, index) {
+            const messageElement = document.getElementById("message");
+
+            // Verificar se a resposta do usuário está correta
+            if (isTrue === correctAnswers[index]) {
+                messageElement.textContent = "Parabéns, você acertou!";
+                messageElement.style.color = "green";
+            } else {
+                messageElement.textContent = "Você errou!";
+                messageElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
